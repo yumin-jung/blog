@@ -7,8 +7,8 @@ import { join } from "path";
 import commaNumber from "comma-number";
 
 // Image
-const rauchgPhoto = toArrayBuffer(
-  readFileSync(join(process.cwd(), "public/images/rauchg-3d4cecf.gray.jpg"))
+const cloudPhoto = toArrayBuffer(
+  readFileSync(join(process.cwd(), "public/images/cloud.jpeg"))
 );
 
 // Fonts
@@ -49,7 +49,7 @@ export async function GET() {
                 tw="rounded-full h-74"
                 alt="Guillermo Rauch"
                 // @ts-ignore
-                src={rauchgPhoto}
+                src={cloudPhoto}
               />
             </div>
 
