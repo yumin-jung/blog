@@ -107,6 +107,8 @@ export function ThemeToggle() {
             localStorage.setItem("theme", newPreference);
           }
 
+          window.dispatchEvent(new StorageEvent('storage', { key: newPreference }));
+
           va.track("Theme toggle", {
             Theme: newPreference === null ? "system" : newPreference,
           });
