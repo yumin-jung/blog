@@ -6,8 +6,8 @@ export async function GET() {
   return new Response(
     `<?xml version="1.0" encoding="utf-8"?>
   <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>Guillermo Rauch</title>
-    <subtitle>Essays</subtitle>
+    <title>Yumin Jung</title>
+    <subtitle>Blog</subtitle>
     <link href="https://yumin.blog/atom" rel="self"/>
     <link href="https://yumin.blog/"/>
     <updated>${posts[0].date}</updated>

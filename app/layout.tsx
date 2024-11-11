@@ -50,7 +50,6 @@ export default function RootLayout({
             __html: `(${themeEffect.toString()})();(${doge.toString()})();`,
           }}
         />
-        <meta name="google-site-verification" content="v_Nek6PrpjXE1yYa3b6m8cQhdOoWKMc2m3WYfXrTpWs" />
       </head>
 
       <body className="dark:text-gray-100 max-w-2xl m-auto">
