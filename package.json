@@ -53,7 +53,8 @@
   "scripts": {
     "dev": "next dev --turbopack -H 0.0.0.0",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "prettier": {
     "arrowParens": "avoid"
