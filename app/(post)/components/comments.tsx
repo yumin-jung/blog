@@ -24,7 +24,7 @@ export default function Comments() {
     script.setAttribute('crossorigin', 'anonymous');
 
     if (typeof window !== 'undefined') {
-      const theme = localStorage.getItem('theme') || 'system';
+      const theme = localStorage.getItem('theme') || 'dark';
       script.setAttribute('data-theme', theme);
     }
 
