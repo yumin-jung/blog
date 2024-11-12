@@ -33,7 +33,7 @@ export function Header({ posts }: { posts: Post[] }) {
         {post.title}
       </h1>
 
-      <p className="font-mono flex text-xs text-gray-500 dark:text-gray-500">
+      <p className="font-mono flex text-xs text-gray-500 dark:text-gray-500 mb-10">
         <span className="flex-grow">
           <span className="hidden md:inline">
             <span>
