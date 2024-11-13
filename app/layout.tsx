@@ -12,11 +12,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "기록 남기기",
   description:
-    "Yumin Jung, a software engineer.",
+    "Yumin Jung, Software Engineer.",
   openGraph: {
     title: "기록 남기기",
     description:
-      "Yumin Jung, a software engineer.",
+      "Yumin Jung, Software Engineer.",
     url: "https://yumin.blog",
     siteName: "기록 남기기",
     images: ["/opengraph-image"],
