@@ -37,6 +37,12 @@ module.exports = withMDX({
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "avatar-jig9j3gwu.vercel.sh",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
   headers() {
