@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Inter } from "next/font/google";
 import { themeEffect } from "./theme-effect";
 import { Analytics } from "./analytics";
@@ -60,6 +61,7 @@ export default function RootLayout({
 
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
