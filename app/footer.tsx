@@ -1,5 +1,5 @@
-import { A } from "./(post)/components/a";
-import Image from "next/image";
+import { A } from './(post)/components/a';
+import Image from 'next/image';
 
 export function Footer() {
   return (

@@ -1,10 +1,10 @@
 'use client';
 
-import React from "react";
-import { useEffect, useRef } from "react";
+import React from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function Comments() {
- const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -36,7 +36,9 @@ export default function Comments() {
   }, []);
 
   const changeGiscusTheme = (theme: string) => {
-    const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
+    const iframe = document.querySelector<HTMLIFrameElement>(
+      'iframe.giscus-frame'
+    );
     iframe?.contentWindow?.postMessage(
       {
         giscus: {
@@ -45,7 +47,7 @@ export default function Comments() {
           },
         },
       },
-      'https://giscus.app',
+      'https://giscus.app'
     );
   };
 
@@ -62,4 +64,4 @@ export default function Comments() {
   }, []);
 
   return <div ref={ref}></div>;
-};
+}

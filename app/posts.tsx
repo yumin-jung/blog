@@ -1,32 +1,32 @@
-"use client";
+'use client';
 
-import { useMemo, useState } from "react";
-import Link from "next/link";
-import { Suspense } from "react";
-import useSWR from "swr";
+import { useMemo, useState } from 'react';
+import Link from 'next/link';
+import { Suspense } from 'react';
+import useSWR from 'swr';
 
-type SortSetting = ["date" | "views", "desc" | "asc"];
+type SortSetting = ['date' | 'views', 'desc' | 'asc'];
 
-const fetcher = (url: string) => fetch(url).then(res => res.json());
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export function Posts({ posts: initialPosts }) {
-  const [sort, setSort] = useState<SortSetting>(["date", "desc"]);
-  const { data: posts } = useSWR("/api/posts", fetcher, {
+  const [sort, setSort] = useState<SortSetting>(['date', 'desc']);
+  const { data: posts } = useSWR('/api/posts', fetcher, {
     fallbackData: initialPosts,
     refreshInterval: 5000,
   });
 
   function sortDate() {
-    setSort(sort => [
-      "date",
-      sort[0] !== "date" || sort[1] === "asc" ? "desc" : "asc",
+    setSort((sort) => [
+      'date',
+      sort[0] !== 'date' || sort[1] === 'asc' ? 'desc' : 'asc',
     ]);
   }
 
   function sortViews() {
-    setSort(sort => [
-      sort[0] === "views" && sort[1] === "asc" ? "date" : "views",
-      sort[0] !== "views" ? "desc" : sort[1] === "asc" ? "desc" : "asc",
+    setSort((sort) => [
+      sort[0] === 'views' && sort[1] === 'asc' ? 'date' : 'views',
+      sort[0] !== 'views' ? 'desc' : sort[1] === 'asc' ? 'desc' : 'asc',
     ]);
   }
 
@@ -37,13 +37,13 @@ export function Posts({ posts: initialPosts }) {
           <button
             onClick={sortDate}
             className={`w-12 h-9 text-left  ${
-              sort[0] === "date" && sort[1] !== "desc"
-                ? "text-gray-700 dark:text-gray-400"
-                : ""
+              sort[0] === 'date' && sort[1] !== 'desc'
+                ? 'text-gray-700 dark:text-gray-400'
+                : ''
             }`}
           >
             date
-            {sort[0] === "date" && sort[1] === "asc" && "↑"}
+            {sort[0] === 'date' && sort[1] === 'asc' && '↑'}
           </button>
           <span className="grow pl-2">title</span>
           <button
@@ -52,14 +52,14 @@ export function Posts({ posts: initialPosts }) {
                   h-9
                   pl-4
                   ${
-                    sort[0] === "views"
-                      ? "text-gray-700 dark:text-gray-400"
-                      : ""
+                    sort[0] === 'views'
+                      ? 'text-gray-700 dark:text-gray-400'
+                      : ''
                   }
                 `}
           >
             views
-            {sort[0] === "views" ? (sort[1] === "asc" ? "↑" : "↓") : ""}
+            {sort[0] === 'views' ? (sort[1] === 'asc' ? '↑' : '↓') : ''}
           </button>
         </header>
 
@@ -74,12 +74,12 @@ function List({ posts, sort }) {
   const sortedPosts = useMemo(() => {
     const [sortKey, sortDirection] = sort;
     return [...posts].sort((a, b) => {
-      if (sortKey === "date") {
-        return sortDirection === "desc"
+      if (sortKey === 'date') {
+        return sortDirection === 'desc'
           ? new Date(b.date).getTime() - new Date(a.date).getTime()
           : new Date(a.date).getTime() - new Date(b.date).getTime();
       } else {
-        return sortDirection === "desc" ? b.views - a.views : a.views - b.views;
+        return sortDirection === 'desc' ? b.views - a.views : a.views - b.views;
       }
     });
   }, [posts, sort]);
@@ -98,13 +98,13 @@ function List({ posts, sort }) {
             <Link href={`/${new Date(post.date).getFullYear()}/${post.id}`}>
               <span
                 className={`flex transition-[background-color] hover:bg-gray-100 dark:hover:bg-[#242424] active:bg-gray-200 dark:active:bg-[#222] border-y border-gray-200 dark:border-[#313131]
-                ${!firstOfYear ? "border-t-0" : ""}
-                ${lastOfYear ? "border-b-0" : ""}
+                ${!firstOfYear ? 'border-t-0' : ''}
+                ${lastOfYear ? 'border-b-0' : ''}
               `}
               >
                 <span
                   className={`py-3 flex grow items-center ${
-                    !firstOfYear ? "ml-14" : ""
+                    !firstOfYear ? 'ml-14' : ''
                   }`}
                 >
                   {firstOfYear && (

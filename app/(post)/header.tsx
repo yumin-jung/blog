@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useSelectedLayoutSegments } from "next/navigation";
-import { useEffect, useRef } from "react";
-import { ago } from "time-ago";
-import useSWR from "swr";
-import type { Post } from "@/app/get-posts";
+import { useSelectedLayoutSegments } from 'next/navigation';
+import { useEffect, useRef } from 'react';
+import { ago } from 'time-ago';
+import useSWR from 'swr';
+import type { Post } from '@/app/get-posts';
 
-const fetcher = (url: string) => fetch(url).then(res => res.json());
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export function Header({ posts }: { posts: Post[] }) {
   const segments = useSelectedLayoutSegments();
@@ -14,10 +14,10 @@ export function Header({ posts }: { posts: Post[] }) {
   // date/post
   // lang/date/post
   const initialPost = posts.find(
-    post => post.id === segments[segments.length - 1]
+    (post) => post.id === segments[segments.length - 1]
   );
   const { data: post, mutate } = useSWR(
-    `/api/view?id=${initialPost?.id ?? ""}`,
+    `/api/view?id=${initialPost?.id ?? ''}`,
     fetcher,
     {
       fallbackData: initialPost,
@@ -75,12 +75,12 @@ function Views({ id, mutate, defaultValue }) {
   const didLogViewRef = useRef(false);
 
   useEffect(() => {
-    if ("development" === process.env.NODE_ENV) return;
+    if ('development' === process.env.NODE_ENV) return;
     if (!didLogViewRef.current) {
-      const url = "/api/view?incr=1&id=" + encodeURIComponent(id);
+      const url = '/api/view?incr=1&id=' + encodeURIComponent(id);
       fetch(url)
-        .then(res => res.json())
-        .then(obj => {
+        .then((res) => res.json())
+        .then((obj) => {
           mutate(obj);
         })
         .catch(console.error);

@@ -1,36 +1,34 @@
-import "./globals.css";
+import './globals.css';
 
-import { Inter } from "next/font/google";
-import { themeEffect } from "./theme-effect";
-import { Analytics } from "./analytics";
-import { Header } from "./header";
-import { Footer } from "./footer";
-import { doge } from "./doge";
+import { Inter } from 'next/font/google';
+import { themeEffect } from './theme-effect';
+import { Analytics } from './analytics';
+import { Header } from './header';
+import { Footer } from './footer';
+import { doge } from './doge';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: "기록 남기기",
-  description:
-    "Yumin Jung, Software Engineer.",
+  title: '기록 남기기',
+  description: 'Yumin Jung, Software Engineer.',
   openGraph: {
-    title: "기록 남기기",
-    description:
-      "Yumin Jung, Software Engineer.",
-    url: "https://yumin.blog",
-    siteName: "기록 남기기",
-    images: ["/opengraph-image"],
+    title: '기록 남기기',
+    description: 'Yumin Jung, Software Engineer.',
+    url: 'https://yumin.blog',
+    siteName: '기록 남기기',
+    images: ['/opengraph-image'],
   },
   twitter: {
-    card: "summary_large_image",
-    site: "@yumin_jung_",
-    creator: "@yumin_jung_",
+    card: 'summary_large_image',
+    site: '@yumin_jung_',
+    creator: '@yumin_jung_',
   },
-  metadataBase: new URL("https://yumin.blog"),
+  metadataBase: new URL('https://yumin.blog'),
 };
 
 export const viewport = {
-  themeColor: "transparent",
+  themeColor: 'transparent',
 };
 
 export default function RootLayout({

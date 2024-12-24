@@ -1,6 +1,6 @@
-import { Header } from "./header";
-import { getPosts } from "../get-posts";
-import Comments from './components/comments'
+import { Header } from './header';
+import { getPosts } from '../get-posts';
+import Comments from './components/comments';
 
 export const revalidate = 60;
 

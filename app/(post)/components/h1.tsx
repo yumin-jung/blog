@@ -1,4 +1,4 @@
-import { withHeadingId } from "./utils";
+import { withHeadingId } from './utils';
 
 export function H1({ children }) {
   return (

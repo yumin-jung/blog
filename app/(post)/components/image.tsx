@@ -1,8 +1,8 @@
-import sizeOf from "image-size";
-import { join } from "path";
-import { readFile } from "fs/promises";
-import { Caption } from "./caption";
-import NextImage from "next/image";
+import sizeOf from 'image-size';
+import { join } from 'path';
+import { readFile } from 'fs/promises';
+import { Caption } from './caption';
+import NextImage from 'next/image';
 
 export async function Image({
   src,
@@ -15,33 +15,33 @@ export async function Image({
   width: number | null;
   height: number | null;
 }) {
-  const isDataImage = src.startsWith("data:");
+  const isDataImage = src.startsWith('data:');
   if (isDataImage) {
     /* eslint-disable @next/next/no-img-element */
-    return <img src={src} alt={originalAlt ?? ""} />;
+    return <img src={src} alt={originalAlt ?? ''} />;
   } else {
     if (width === null || height === null) {
       let imageBuffer: Buffer | null = null;
 
-      if (src.startsWith("http")) {
+      if (src.startsWith('http')) {
         imageBuffer = Buffer.from(
-          await fetch(src).then(res => res.arrayBuffer())
+          await fetch(src).then((res) => res.arrayBuffer())
         );
       } else {
         if (
           !process.env.CI &&
           process.env.VERCEL_URL &&
-          process.env.NODE_ENV === "production"
+          process.env.NODE_ENV === 'production'
         ) {
           imageBuffer = Buffer.from(
-            await fetch("https://" + process.env.VERCEL_URL + src).then(res =>
+            await fetch('https://' + process.env.VERCEL_URL + src).then((res) =>
               res.arrayBuffer()
             )
           );
         } else {
           imageBuffer = await readFile(
             new URL(
-              join(import.meta.url, "..", "..", "..", "..", "public", src)
+              join(import.meta.url, '..', '..', '..', '..', 'public', src)
             ).pathname
           );
         }
@@ -51,7 +51,7 @@ export async function Image({
         computedSize.width === undefined ||
         computedSize.height === undefined
       ) {
-        throw new Error("Could not compute image size");
+        throw new Error('Could not compute image size');
       }
       width = computedSize.width;
       height = computedSize.height;
@@ -60,7 +60,7 @@ export async function Image({
     let alt: string | null = null;
     let dividedBy = 100;
 
-    if ("string" === typeof originalAlt) {
+    if ('string' === typeof originalAlt) {
       const match = originalAlt.match(/(.*) (\[(\d+)%\])?$/);
       if (match != null) {
         alt = match[1];
@@ -77,7 +77,7 @@ export async function Image({
         <NextImage
           width={width * factor}
           height={height * factor}
-          alt={alt ?? ""}
+          alt={alt ?? ''}
           src={src}
         />
 

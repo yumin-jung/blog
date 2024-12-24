@@ -1,6 +1,6 @@
-import links from "@/links.json";
-import { headers } from "next/headers";
-import { redirect, notFound } from "next/navigation";
+import links from '@/links.json';
+import { headers } from 'next/headers';
+import { redirect, notFound } from 'next/navigation';
 
 export default async function Link(props: {
   params: Promise<{ id: string }>;
@@ -16,7 +16,7 @@ export default async function Link(props: {
 
   if (
     searchParams.bot ||
-    /bot/i.test((await headers()).get("user-agent") as string)
+    /bot/i.test((await headers()).get('user-agent') as string)
   ) {
     return <></>;
   } else {

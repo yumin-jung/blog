@@ -1,4 +1,4 @@
-import { getPosts } from "@/app/get-posts";
+import { getPosts } from '@/app/get-posts';
 
 export async function GET() {
   const posts = await getPosts();
@@ -18,7 +18,7 @@ export async function GET() {
     </author>
     ${posts.slice(0, max).reduce((acc, post) => {
       const dateMatch = post.date.match(/\d{4}/);
-      if (!dateMatch) return "";
+      if (!dateMatch) return '';
       return `${acc}
         <entry>
           <id>${post.id}</id>
@@ -26,11 +26,11 @@ export async function GET() {
           <link href="https:/yumin.blog/${dateMatch[0]}/${post.id}"/>
           <updated>${post.date}</updated>
         </entry>`;
-    }, "")}
+    }, '')}
   </feed>`,
     {
       headers: {
-        "Content-Type": "application/atom+xml; charset=utf-8",
+        'Content-Type': 'application/atom+xml; charset=utf-8',
       },
     }
   );

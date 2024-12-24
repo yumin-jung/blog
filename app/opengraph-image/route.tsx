@@ -1,18 +1,18 @@
 export const revalidate = 60;
 
-import { ImageResponse } from "next/og";
-import { getPosts } from "@/app/get-posts";
-import { readFileSync } from "fs";
-import { join } from "path";
+import { ImageResponse } from 'next/og';
+import { getPosts } from '@/app/get-posts';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
-const fontsDir = join(process.cwd(), "fonts");
+const fontsDir = join(process.cwd(), 'fonts');
 
-const inter300 = readFileSync(join(fontsDir, "inter-latin-300-normal.woff"));
+const inter300 = readFileSync(join(fontsDir, 'inter-latin-300-normal.woff'));
 
-const inter600 = readFileSync(join(fontsDir, "inter-latin-600-normal.woff"));
+const inter600 = readFileSync(join(fontsDir, 'inter-latin-600-normal.woff'));
 
 const robotoMono400 = readFileSync(
-  join(fontsDir, "roboto-mono-latin-400-normal.woff")
+  join(fontsDir, 'roboto-mono-latin-400-normal.woff')
 );
 
 export async function GET() {
@@ -22,17 +22,17 @@ export async function GET() {
     (
       <div
         tw="flex p-10 h-full w-full bg-white flex-col"
-        style={font("Inter 300")}
+        style={font('Inter 300')}
       >
         <header tw="flex text-[36px] w-full">
-          <div tw="font-bold" style={font("Inter 600")}>
+          <div tw="font-bold" style={font('Inter 600')}>
             Yumin Jung
           </div>
           <div tw="grow" />
           <div tw="text-[28px]">yumin.blog</div>
         </header>
 
-        <main tw="flex mt-10 flex-col w-full" style={font("Roboto Mono 400")}>
+        <main tw="flex mt-10 flex-col w-full" style={font('Roboto Mono 400')}>
           <div tw="flex w-full text-[26px] text-gray-400 mb-3">
             <div tw="w-24">date</div>
             <div tw="grow">title</div>
@@ -48,7 +48,7 @@ export async function GET() {
                 {posts[i - 1] === undefined ||
                 getYear(post.date) !== getYear(posts[i - 1].date)
                   ? getYear(post.date)
-                  : ""}
+                  : ''}
               </div>
               <div tw="flex grow">{post.title}</div>
               <div tw="flex text-gray-400 pl-7">{post?.viewsFormatted}</div>
@@ -62,15 +62,15 @@ export async function GET() {
       height: 630,
       fonts: [
         {
-          name: "Inter 300",
+          name: 'Inter 300',
           data: inter300,
         },
         {
-          name: "Inter 600",
+          name: 'Inter 600',
           data: inter600,
         },
         {
-          name: "Roboto Mono 400",
+          name: 'Roboto Mono 400',
           data: robotoMono400,
         },
       ],

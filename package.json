@@ -1,7 +1,19 @@
 {
   "name": "yumin-blog",
-  "license": "MIT",
   "description": "yumin.blog",
+  "license": "MIT",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --turbopack -H 0.0.0.0",
+    "postinstall": "node ./fonts/init.mjs",
+    "lint": "next lint",
+    "prepare": "husky",
+    "start": "next start"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "prettier": "@vercel/style-guide/prettier",
   "dependencies": {
     "@fontsource/inter": "^4.5.15",
     "@fontsource/roboto-mono": "^4.5.10",
@@ -30,9 +42,12 @@
     "@types/node": "22.9.0",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "@vercel/style-guide": "^6.0.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^8.57.1",
     "eslint-config-next": "15.0.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
     "postcss": "^8.4.49",
     "prettier": "^2.8.8",
     "tailwindcss": "^3.4.14",
@@ -49,15 +64,5 @@
       "@types/react": "npm:types-react@19.0.0-rc.1",
       "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
     }
-  },
-  "scripts": {
-    "dev": "next dev --turbopack -H 0.0.0.0",
-    "build": "next build",
-    "start": "next start",
-    "postinstall": "node ./fonts/init.mjs",
-    "lint": "next lint"
-  },
-  "prettier": {
-    "arrowParens": "avoid"
   }
 }

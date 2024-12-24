@@ -1,14 +1,14 @@
-import { type ReactNode, Suspense } from "react";
-import { Tweet, getTweet } from "react-tweet/api";
+import { type ReactNode, Suspense } from 'react';
+import { Tweet, getTweet } from 'react-tweet/api';
 import {
   EmbeddedTweet,
   TweetNotFound,
   TweetSkeleton,
   type TweetProps,
-} from "react-tweet";
-import redis from "@/app/redis";
-import { Caption } from "./caption";
-import "./tweet.css";
+} from 'react-tweet';
+import redis from '@/app/redis';
+import { Caption } from './caption';
+import './tweet.css';
 
 interface TweetArgs {
   id: string;
@@ -27,7 +27,7 @@ async function getAndCacheTweet(id: string): Promise<Tweet | undefined> {
       return tweet;
     }
   } catch (error) {
-    console.error("tweet fetch error", error);
+    console.error('tweet fetch error', error);
   }
 
   const cachedTweet: Tweet | null = await redis.get(`tweet:${id}`);
