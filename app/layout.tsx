@@ -10,13 +10,13 @@ import { doge } from './doge';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: '기록 남기기',
+  title: '나의 언어 | 정유민 블로그',
   description: 'Yumin Jung, Software Engineer.',
   openGraph: {
-    title: '기록 남기기',
+    title: '나의 언어',
     description: 'Yumin Jung, Software Engineer.',
     url: 'https://yumin.blog',
-    siteName: '기록 남기기',
+    siteName: '나의 언어',
     images: ['/opengraph-image'],
   },
   twitter: {
