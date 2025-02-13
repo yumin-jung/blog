@@ -6,6 +6,7 @@ module.exports = withMDX({
     mdxRs: true,
   },
   images: {
+    disableStaticImages: true,
     remotePatterns: [
       {
         protocol: 'https',
