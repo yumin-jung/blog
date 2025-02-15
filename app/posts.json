@@ -3,7 +3,7 @@
     {
       "id": "sub3",
       "date": "Nov 7, 2024",
-      "title": "Sub-3를 달성하다"
+      "title": "Sub3"
     },
     {
       "id": "coffee",
@@ -23,12 +23,12 @@
     {
       "id": "what-i-learned-in-2024",
       "date": "Dec 23, 2024",
-      "title": "내가 2024년에 알게 된 것들"
+      "title": "2024년에 알게 된 것들"
     },
     {
       "id": "first-broadcast-experience",
       "date": "Jan 1, 2025",
-      "title": "나의 첫 방송 경험"
+      "title": "첫 방송"
     },
     {
       "id": "keyboard",
@@ -38,7 +38,7 @@
     {
       "id": "blood-donation-alt",
       "date": "Feb 11, 2025",
-      "title": "헌혈과 건강"
+      "title": "헌혈"
     }
   ]
 }
