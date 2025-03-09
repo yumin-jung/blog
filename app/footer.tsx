@@ -12,8 +12,8 @@ export function Footer() {
       />
       <div className="grow text-left ml-2">
         Yumin Jung (
-        <A target="_blank" href="https://instagram.com/self_overcoming">
-          @self_overcoming
+        <A target="_blank" href="http://www.strava.com/athletes/yumin-jung">
+          Strava
         </A>
         )
       </div>

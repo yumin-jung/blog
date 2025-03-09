@@ -38,7 +38,7 @@ export function Header({ posts }: { posts: Post[] }) {
           <span className="hidden md:inline">
             <span>
               <a
-                href="https://instagram.com/self_overcoming"
+                href="http://www.strava.com/athletes/yumin-jung"
                 className="hover:text-gray-800 dark:hover:text-gray-400"
                 target="_blank"
               >
