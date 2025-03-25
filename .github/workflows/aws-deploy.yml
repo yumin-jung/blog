@@ -29,7 +29,7 @@ jobs:
       - name: Build
         run: pnpm run build
       - name: zip create
-        run: zip -qq -r ./blog.zip .
+        run: zip -qq -r ./blog.zip . -x "node_modules/*"
         shell: bash
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
