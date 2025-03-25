@@ -1,16 +1,17 @@
 version: 0.0
 os: linux
+
 files:
   - source: /
-    destination: /home/ec2-user/blog/
+    destination: /home/ubuntu/deploy/
     overwrite: yes
 permissions:
-  - object: /home/ec2-user/blog/
-    owner: root
-    group: root
+  - object: /home/ubuntu/deploy/
+    owner: ubuntu
+    group: ubuntu
     mode: 755
 hooks:
   AfterInstall:
     - location: deploy.sh
-      timeout: 500
-      runas: root
+      timeout: 60
+      runas: ubuntu

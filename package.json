@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build": "next build",
+    "deploy": "pm2 start ecosystem.config.js --env production",
     "dev": "next dev --turbopack -H 0.0.0.0",
     "postinstall": "node ./fonts/init.mjs",
     "lint": "next lint",
