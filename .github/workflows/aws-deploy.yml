@@ -20,6 +20,10 @@ jobs:
           corepack enable
           corepack prepare pnpm@latest --activate
           pnpm -v
+      - name: Set Environment Variables
+        run: |
+          echo "UPSTASH_REDIS_REST_URL=${{ secrets.UPSTASH_REDIS_REST_URL }}" >> $GITHUB_ENV
+          echo "UPSTASH_REDIS_REST_TOKEN=${{ secrets.UPSTASH_REDIS_REST_TOKEN }}" >> $GITHUB_ENV
       - name: Install Dependencies
         run: pnpm install
       - name: Build
