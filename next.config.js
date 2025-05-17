@@ -66,6 +66,11 @@ module.exports = withMDX({
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/forerunner/privacy',
+        destination: '/forerunner/ko/privacy',
+        permanent: true,
+      },
     ];
   },
 });
