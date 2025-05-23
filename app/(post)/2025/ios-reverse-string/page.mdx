@@ -1,0 +1,56 @@
+export const metadata = {
+  title: '[iOS] 문자열 뒤집기',
+  description: '문자열 뒤집기',
+  openGraph: {
+    title: '문자열 뒤집기',
+    description: '문자열 뒤집기',
+    images: [{ url: '/og/ios-reverse-string' }],
+  },
+};
+
+### 1. Array 메서드를 사용하는 방법
+
+```swift
+func reverseString(_ s: String) -> String {
+  return String(s.reversed())
+}
+```
+
+### 2. Two Pointer를 사용하는 방법
+
+```swift
+func reverseString(_ s: String) -> String {
+  var chars = Array(s)
+  var left = 0
+  var right = chars.count - 1
+
+  while left < right {
+    chars.swapAt(left, right)
+    left += 1
+    right -= 1
+  }
+
+  return String(chars)
+}
+```
+
+### 3. 재귀를 이용한 방법
+
+```swift
+func reverseString(_ s: String) -> String {
+    var chars = Array(s)
+
+    func helper(left: Int, right: Int) {
+        if left >= right { return }
+        chars.swapAt(left, right)
+        helper(left: left + 1, right: right - 1)
+    }
+
+    helper(left: 0, right: chars.count - 1)
+    return String(chars)
+}
+```
+
+1. 보통 뒤집기만 한다면 가독성과 성능이 좋은 1번
+2. 커스터마이징이 필요하면 2번
+3. 3번은 Stack Overflow 발생할 수 있음

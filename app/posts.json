@@ -39,6 +39,11 @@
       "id": "goodreads",
       "date": "Mar 22, 2025",
       "title": "Goodreads"
+    },
+    {
+      "id": "ios-reverse-string",
+      "date": "May 23, 2025",
+      "title": "[iOS] 문자열 뒤집기"
     }
   ]
 }
