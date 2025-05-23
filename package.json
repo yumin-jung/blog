@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build": "next build",
+    "postbuild": "next-sitemap",
     "deploy": "pm2 start ecosystem.config.js --env production",
     "dev": "next dev --turbopack -H 0.0.0.0",
     "postinstall": "node ./fonts/init.mjs",
@@ -28,6 +29,7 @@
     "image-size": "^1.2.1",
     "load-script": "^1.0.0",
     "next": "^15.2.3",
+    "next-sitemap": "^4.2.3",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
     "react-intersection-observer": "^8.34.0",
